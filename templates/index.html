@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cataract Detection</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            background-color: #f0f2f5;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .centered-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container-box {
+            width: 100%;
+            max-width: 600px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+        }
+
+        .image-preview {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="centered-wrapper">
+    <div class="container-box text-center">
+        <h2 class="mb-4">🧠 Cataract Detection AI</h2>
+        <form method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+                <input type="file" class="form-control" name="image" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Upload & Predict</button>
+        </form>
+
+        {% if result %}
+        <div class="mt-4">
+            <h4>🔍 Prediction: <span class="text-primary">{{ result | upper }}</span></h4>
+            <p class="lead">Confidence: <strong>{{ '%.2f'|format(conf) }}%</strong></p>
+            <img src="{{ image_path }}" class="image-preview" alt="Uploaded Image">
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+</body>
+</html>
