@@ -4,6 +4,8 @@ A Flask web app that uses a CNN deep learning model to detect cataracts from eye
 This project is a deep learning-powered Flask web application that detects **cataracts** from eye images using a **Convolutional Neural Network (CNN)**. Users can upload an eye image and receive real-time predictions with confidence scores.
 
 ---
+![Cataract Detection](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Cataract_in_human_eye.jpg/640px-Cataract_in_human_eye.jpg)
+
 
 ## Features
 
@@ -23,14 +25,7 @@ This project is a deep learning-powered Flask web application that detects **cat
 
 ---
 
-## Dataset Structure
- processed_image/
-├── train/
-│ ├── cataract/
-│ └── normal/
-├── test/
-├── cataract/
-└── normal/
+<pre><code>## 📂 Dataset Structure ``` processed_image/ ├── train/ │ ├── cataract/ │ └── normal/ ├── test/ │ ├── cataract/ │ └── normal/ ``` </code></pre>
 
 The CNN model is trained on this dataset to classify eye images as `cataract` or `normal`.
 
